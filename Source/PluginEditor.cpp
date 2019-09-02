@@ -7,8 +7,10 @@ TestingValueTreeAudioProcessorEditor::TestingValueTreeAudioProcessorEditor (Test
     setSize (400, 300);
 
 	addAndMakeVisible(button1);
+	addAndMakeVisible(button2);
 
 	button1.onClick = [this] { doSomething(); };
+	button2.onClick = [this] {doSomethingElse(); };
 }
 
 TestingValueTreeAudioProcessorEditor::~TestingValueTreeAudioProcessorEditor()
@@ -30,6 +32,7 @@ void TestingValueTreeAudioProcessorEditor::resized()
 	auto bottomLeftCorner = window.removeFromLeft(window.getWidth() / 2);
 
 	button1.setBounds(bottomLeftCorner);
+	button2.setBounds(window);
 }
 
 void TestingValueTreeAudioProcessorEditor::doSomething()
@@ -37,4 +40,12 @@ void TestingValueTreeAudioProcessorEditor::doSomething()
 	auto val = processor.treeState.state["SomeValue"];
 	auto newVal = (int)val;
 	processor.treeState.state.setProperty("SomeValue", ++newVal, nullptr);
+}
+
+void TestingValueTreeAudioProcessorEditor::doSomethingElse()
+{
+	auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
+	val = "oops!";
+	auto myVal = (int)val.getValue();
+	val = ++myVal;
 }

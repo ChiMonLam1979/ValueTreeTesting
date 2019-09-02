@@ -14,6 +14,7 @@ TestingValueTreeAudioProcessor::TestingValueTreeAudioProcessor()
 #endif
 {
 	treeState.state.setProperty("SomeValue", 1, nullptr);
+	treeState.state.setProperty("SomeOtherValue", 1, nullptr);
 }
 
 AudioProcessorValueTreeState::ParameterLayout TestingValueTreeAudioProcessor::createParameters()
