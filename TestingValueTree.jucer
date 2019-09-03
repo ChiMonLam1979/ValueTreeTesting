@@ -4,6 +4,8 @@
               pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="eEbWY8" name="TestingValueTree">
     <GROUP id="{15B0F028-C0F2-00F6-255A-A6F9B8D1A639}" name="Source">
+      <FILE id="hVgBsJ" name="MyLabel.cpp" compile="1" resource="0" file="Source/MyLabel.cpp"/>
+      <FILE id="fshmGN" name="MyLabel.h" compile="0" resource="0" file="Source/MyLabel.h"/>
       <FILE id="THANin" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="I2RVVA" name="PluginProcessor.h" compile="0" resource="0"

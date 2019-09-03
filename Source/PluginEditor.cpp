@@ -8,6 +8,7 @@ TestingValueTreeAudioProcessorEditor::TestingValueTreeAudioProcessorEditor (Test
 
 	addAndMakeVisible(button1);
 	addAndMakeVisible(button2);
+	addAndMakeVisible(label);
 
 	button1.onClick = [this] { doSomething(); };
 	button2.onClick = [this] {doSomethingElse(); };
@@ -33,19 +34,24 @@ void TestingValueTreeAudioProcessorEditor::resized()
 
 	button1.setBounds(bottomLeftCorner);
 	button2.setBounds(window);
+	label.setBounds(topSection.removeFromLeft(topSection.getWidth() / 2));
 }
 
 void TestingValueTreeAudioProcessorEditor::doSomething()
 {
-	auto val = processor.treeState.state["SomeValue"];
-	auto newVal = (int)val;
-	processor.treeState.state.setProperty("SomeValue", ++newVal, nullptr);
+	//auto val = processor.treeState.state["SomeValue"];
+	//auto newVal = (int)val;
+	//processor.treeState.state.setProperty("SomeValue", ++newVal, nullptr);
+
+	auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
+	auto myVal = (int)val.getValue();
+	val = --myVal;
 }
 
 void TestingValueTreeAudioProcessorEditor::doSomethingElse()
 {
 	auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
-	val = "oops!";
+	//val = "oops!";
 	auto myVal = (int)val.getValue();
 	val = ++myVal;
 }
