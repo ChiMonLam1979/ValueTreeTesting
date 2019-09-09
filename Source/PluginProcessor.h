@@ -1,6 +1,6 @@
 #pragma once
-
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "State.h"
 
 class TestingValueTreeAudioProcessor  : public AudioProcessor
 {
@@ -39,6 +39,8 @@ public:
 	AudioProcessorValueTreeState treeState;
 
 	AudioProcessorValueTreeState::ParameterLayout createParameters();
+
+	State myState;
 
 private:
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(TestingValueTreeAudioProcessor)

@@ -4,6 +4,14 @@
               pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="eEbWY8" name="TestingValueTree">
     <GROUP id="{15B0F028-C0F2-00F6-255A-A6F9B8D1A639}" name="Source">
+      <FILE id="tzaOKN" name="State.h" compile="0" resource="0" file="Source/State.h"/>
+      <FILE id="UsQGqP" name="GUIState.cpp" compile="1" resource="0" file="Source/GUIState.cpp"/>
+      <FILE id="DFf6lX" name="GUIState.h" compile="0" resource="0" file="Source/GUIState.h"/>
+      <FILE id="EJi4m1" name="GUIStateCallBack.cpp" compile="1" resource="0"
+            file="Source/GUIStateCallBack.cpp"/>
+      <FILE id="MJAj7z" name="GUIStateCallBack.h" compile="0" resource="0"
+            file="Source/GUIStateCallBack.h"/>
+      <FILE id="zPFcIh" name="State.cpp" compile="1" resource="0" file="Source/State.cpp"/>
       <FILE id="hVgBsJ" name="MyLabel.cpp" compile="1" resource="0" file="Source/MyLabel.cpp"/>
       <FILE id="fshmGN" name="MyLabel.h" compile="0" resource="0" file="Source/MyLabel.h"/>
       <FILE id="THANin" name="PluginProcessor.cpp" compile="1" resource="0"

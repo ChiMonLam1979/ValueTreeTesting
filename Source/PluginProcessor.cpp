@@ -15,6 +15,8 @@ TestingValueTreeAudioProcessor::TestingValueTreeAudioProcessor()
 {
 	treeState.state.setProperty("SomeValue", 1, nullptr);
 	treeState.state.setProperty("SomeOtherValue", 1, nullptr);
+
+	myState.setValue(1);
 }
 
 AudioProcessorValueTreeState::ParameterLayout TestingValueTreeAudioProcessor::createParameters()
@@ -134,7 +136,7 @@ void TestingValueTreeAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 
 bool TestingValueTreeAudioProcessor::hasEditor() const
 {
-    return true; // (change this to false if you choose to not supply an editor)
+    return true;
 }
 
 AudioProcessorEditor* TestingValueTreeAudioProcessor::createEditor()

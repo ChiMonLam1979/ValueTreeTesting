@@ -2,7 +2,7 @@
 #include "PluginEditor.h"
 
 TestingValueTreeAudioProcessorEditor::TestingValueTreeAudioProcessorEditor (TestingValueTreeAudioProcessor& p)
-    : AudioProcessorEditor (&p), processor (p)
+    : AudioProcessorEditor (&p), processor (p), myState(p.myState)
 {
     setSize (400, 300);
 
@@ -43,15 +43,37 @@ void TestingValueTreeAudioProcessorEditor::doSomething()
 	//auto newVal = (int)val;
 	//processor.treeState.state.setProperty("SomeValue", ++newVal, nullptr);
 
-	auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
-	auto myVal = (int)val.getValue();
-	val = --myVal;
+	//auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
+	//auto myVal = (int)val.getValue();
+	//val = --myVal;
+
+	//auto val = myState.getValue();
+	//auto intVal = (int)val.getValue();
+	//auto newVal = --intVal;
+
+	auto val = myState.getValue();
+	auto newVal = --val;
+
+	myState.setValue(newVal);
+
+	//label.setText(myState.getValue().toString(), NotificationType::dontSendNotification);
 }
 
 void TestingValueTreeAudioProcessorEditor::doSomethingElse()
 {
-	auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
-	//val = "oops!";
-	auto myVal = (int)val.getValue();
-	val = ++myVal;
+	//auto val = processor.treeState.state.getPropertyAsValue("SomeOtherValue", nullptr);
+	////val = "oops!";
+	//auto myVal = (int)val.getValue();
+	//val = ++myVal;
+
+	//auto val = myState.getValue();
+	//auto intVal = (int)val.getValue();
+	//auto newVal = ++intVal;
+
+	auto val = myState.getValue();
+	auto newVal = ++val;
+
+	myState.setValue(newVal);
+
+	//label.setText(myState.getValue().toString(), NotificationType::dontSendNotification);
 }
